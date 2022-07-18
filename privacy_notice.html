@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>VOXALO</title>
+		<style type="text/css" media="screen">
+		#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar tbody td a.ui-state-active,#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar tbody td a.ui-state-active:hover,body #booked-profile-page input[type=submit].button-primary:hover,body .booked-list-view button.button:hover, body .booked-list-view input[type=submit].button-primary:hover,body table.booked-calendar input[type=submit].button-primary:hover,body .booked-modal input[type=submit].button-primary:hover,body table.booked-calendar th,body table.booked-calendar thead,body table.booked-calendar thead th,body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button:hover,body #booked-profile-page .booked-profile-header,body #booked-profile-page .booked-tabs li.active a,body #booked-profile-page .booked-tabs li.active a:hover,body #booked-profile-page .appt-block .google-cal-button > a:hover,#ui-datepicker-div.booked_custom_date_picker .ui-datepicker-header{ background:#c4f2d4 !important; }body #booked-profile-page input[type=submit].button-primary:hover,body table.booked-calendar input[type=submit].button-primary:hover,body .booked-list-view button.button:hover, body .booked-list-view input[type=submit].button-primary:hover,body .booked-modal input[type=submit].button-primary:hover,body table.booked-calendar th,body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button:hover,body #booked-profile-page .booked-profile-header,body #booked-profile-page .appt-block .google-cal-button > a:hover{ border-color:#c4f2d4 !important; }body table.booked-calendar tr.days,body table.booked-calendar tr.days th,body .booked-calendarSwitcher.calendar,body #booked-profile-page .booked-tabs,#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar thead,#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar thead th{ background:#039146 !important; }body table.booked-calendar tr.days th,body #booked-profile-page .booked-tabs{ border-color:#039146 !important; }#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar tbody td.ui-datepicker-today a,#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar tbody td.ui-datepicker-today a:hover,body #booked-profile-page input[type=submit].button-primary,body table.booked-calendar input[type=submit].button-primary,body .booked-list-view button.button, body .booked-list-view input[type=submit].button-primary,body .booked-list-view button.button, body .booked-list-view input[type=submit].button-primary,body .booked-modal input[type=submit].button-primary,body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button,body #booked-profile-page .booked-profile-appt-list .appt-block.approved .status-block,body #booked-profile-page .appt-block .google-cal-button > a,body .booked-modal p.booked-title-bar,body table.booked-calendar td:hover .date span,body .booked-list-view a.booked_list_date_picker_trigger.booked-dp-active,body .booked-list-view a.booked_list_date_picker_trigger.booked-dp-active:hover,.booked-ms-modal .booked-book-appt /* Multi-Slot Booking */{ background:#56c477; }body #booked-profile-page input[type=submit].button-primary,body table.booked-calendar input[type=submit].button-primary,body .booked-list-view button.button, body .booked-list-view input[type=submit].button-primary,body .booked-list-view button.button, body .booked-list-view input[type=submit].button-primary,body .booked-modal input[type=submit].button-primary,body #booked-profile-page .appt-block .google-cal-button > a,body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button,body .booked-list-view a.booked_list_date_picker_trigger.booked-dp-active,body .booked-list-view a.booked_list_date_picker_trigger.booked-dp-active:hover{ border-color:#56c477; }body .booked-modal .bm-window p i.fa,body .booked-modal .bm-window a,body .booked-appt-list .booked-public-appointment-title,body .booked-modal .bm-window p.appointment-title,.booked-ms-modal.visible:hover .booked-book-appt{ color:#56c477; }.booked-appt-list .timeslot.has-title .booked-public-appointment-title { color:inherit; }</style>
+		<style type="text/css">
+			img.wp-smiley,
+			img.emoji {
+				display: inline !important;
+				border: none !important;
+				box-shadow: none !important;
+				height: 1em !important;
+				width: 1em !important;
+				margin: 0 0.07em !important;
+				vertical-align: -0.1em !important;
+				background: none !important;
+				padding: 0 !important;
+			}
+			.elementor-element.elementor-element-2c37ac2 .master-heading .sub-heading {
+				max-width: 100% !important;
+				text-align: justify !important;
+			}
+		</style>
+		<link rel='stylesheet' id='arts-icons-css'  href='assets/wp-content/plugins/masterlayer-addons-for-elementor/assets/css/arts-icons5152.css?ver=1.0' type='text/css' media='all' />
+		<link rel='stylesheet' id='feather-icons-css'  href='assets/wp-content/plugins/masterlayer-addons-for-elementor/assets/css/feather-icons5152.css?ver=1.0' type='text/css' media='all' />
+		<link rel='stylesheet' id='silvertech-icons-css'  href='assets/wp-content/plugins/masterlayer-addons-for-elementor/assets/css/silvertech-icons5152.css?ver=1.0' type='text/css' media='all' />
+		<link rel='stylesheet' id='unicons-icons-css'  href='assets/wp-content/plugins/masterlayer-addons-for-elementor/assets/css/unicons-icons5152.css?ver=1.0' type='text/css' media='all' />
+		<link rel='stylesheet' id='wp-block-library-css'  href='assets/wp-includes/css/dist/block-library/style.min7404.css?ver=5.9.3' type='text/css' media='all' />
+		<link rel='stylesheet' id='wc-blocks-vendors-style-css'  href='assets/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-vendors-stylee1b2.css?ver=6.9.0' type='text/css' media='all' />
+		<link rel='stylesheet' id='wc-blocks-style-css'  href='assets/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-stylee1b2.css?ver=6.9.0' type='text/css' media='all' />
+		<style id='global-styles-inline-css' type='text/css'>
+		body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+		</style>
+		<link rel='stylesheet' id='booked-icons-css'  href='assets/wp-content/plugins/booked/assets/css/icons25b6.css?ver=2.3.5' type='text/css' media='all' />
+		<link rel='stylesheet' id='booked-tooltipster-css'  href='assets/wp-content/plugins/booked/assets/js/tooltipster/css/tooltipster9b70.css?ver=3.3.0' type='text/css' media='all' />
+		<link rel='stylesheet' id='booked-tooltipster-theme-css'  href='assets/wp-content/plugins/booked/assets/js/tooltipster/css/themes/tooltipster-light9b70.css?ver=3.3.0' type='text/css' media='all' />
+		<link rel='stylesheet' id='booked-animations-css'  href='assets/wp-content/plugins/booked/assets/css/animations25b6.css?ver=2.3.5' type='text/css' media='all' />
+		<link rel='stylesheet' id='booked-css-css'  href='assets/wp-content/plugins/booked/dist/booked25b6.css?ver=2.3.5' type='text/css' media='all' />
+		<link rel='stylesheet' id='contact-form-7-css'  href='assets/wp-content/plugins/contact-form-7/includes/css/styles5406.css?ver=5.5.6' type='text/css' media='all' />
+		<link rel='stylesheet' id='rs-plugin-settings-css'  href='assets/wp-content/plugins/revslider/public/assets/css/rs6e434.css?ver=6.4.11' type='text/css' media='all' />
+		<style id='rs-plugin-settings-inline-css' type='text/css'>
+		#rs-demo-id {}
+		</style>
+		<style id='woocommerce-inline-inline-css' type='text/css'>
+		.woocommerce form .form-row .required { visibility: visible; }
+		</style>
+		<link rel='stylesheet' id='silvertech-google-font-dm-sans-css'  href='http://fonts.googleapis.com/css?family=DM+Sans%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900&amp;subset=latin&amp;ver=5.9.3' type='text/css' media='all' />
+		<link rel='stylesheet' id='animate-css'  href='assets/wp-content/themes/silvertech/assets/css/animate49eb.css?ver=3.5.2' type='text/css' media='all' />
+		<link rel='stylesheet' id='slick-css'  href='assets/wp-content/plugins/masterlayer-addons-for-elementor/assets/css/slick5152.css?ver=1.0' type='text/css' media='all' />
+		<link rel='stylesheet' id='eleganticons-css'  href='assets/wp-content/themes/silvertech/assets/css/eleganticons8a54.css?ver=1.0.0' type='text/css' media='all' />
+		<link rel='stylesheet' id='pe-icon-7-stroke-css'  href='assets/wp-content/themes/silvertech/assets/css/pe-icon-7-stroke8a54.css?ver=1.0.0' type='text/css' media='all' />
+		<link rel='stylesheet' id='fontawesome-css'  href='assets/wp-content/themes/silvertech/assets/css/fontawesome05c8.css?ver=5.13.0' type='text/css' media='all' />
+		<link rel='stylesheet' id='silvertech-theme-style-css'  href='assets/wp-content/themes/silvertech/style8a54.css?ver=1.0.0' type='text/css' media='all' />
+		<style id='silvertech-theme-style-inline-css' type='text/css'>
+		/*TYPOGRAPHY*/body{font-family:"DM Sans";}h1,h2,h3,h4,h5,h6{font-family:"DM Sans";}/*ACCENT COLOR*/.text-accent-color,.link-dark:hover,.link-gray:hover,.sticky-post,a.accent,#site-logo .site-logo-text:hover,.header-style-2 #main-nav>ul>li:hover>a>span,.header-style-2 #main-nav .sub-menu li a:hover,.header-style-2 .master-quote .name a,.header-style-3 #main-nav>ul>li:hover>a>span,.header-style-3 #main-nav .sub-menu li a:hover,.header-style-2 .header-search-wrap:hover .header-search-trigger,.header-style-3 .header-search-wrap:hover .header-search-trigger,.hentry .post-tags .inner:before,#featured-title #breadcrumbs a:hover,.hentry .page-links span,.hentry .page-links a span,.hentry .post-tags .inner:before,.hentry .post-tags a:hover,.hentry .post-author .author-socials .socials a,.related-news .related-title,.related-news .post-item .post-categories a:hover,.related-news .post-item .text-wrap h3 a:hover,.related-news .related-post .slick-next:hover:before,.related-news .related-post .slick-prev:hover:before,.comment-reply a,.comment-edit-link,#cancel-comment-reply-link,.unapproved,.logged-in-as a,.hentry .post-title a:hover,#sidebar .widget.widget_calendar caption,.widget.widget_nav_menu .menu > li.current-menu-item > a,.widget.widget_nav_menu .menu > li.current-menu-item,#sidebar .widget.widget_calendar tbody #today,#sidebar .widget.widget_calendar tbody #today a,#sidebar .widget_information ul li.accent-icon i,#footer-widgets .widget_mc4wp_form_widget .mc4wp-form .submit-wrap button:before,#footer .widget_mc4wp_form_widget .submit-wrap button:after,#footer-widgets .widget.widget_recent_posts .post-author,#footer-widgets .widget.widget_recent_posts .post-author a,#bottom .bottom-bar-copyright a:hover,.widget.widget_categories .cat-item span,.widget.widget_categories ul li a:hover,.header-socials a:hover,.hentry .post-by-avatar .text-wrap .name:hover,.widget.widget_recent_posts h3 a:hover,.hentry .post-meta a:hover,.silvertech-step-box .number-box .number,.silvertech-links.link-style-1.accent,.silvertech-links.link-style-2.accent,.silvertech-links.link-style-3.accent,.news-style-1 .master-news:hover .headline-2 a,.silvertech-arrow.hover-accent:hover,.icon-accent .master-video-icon a,.silvertech-button.outline.outline-accent,.silvertech-button.outline.outline-accent .icon,.silvertech-counter .icon.accent,.silvertech-counter .prefix.accent,.silvertech-counter .suffix.accent,.silvertech-counter .number.accent,.silvertech-divider.has-icon .icon-wrap > span.accent,.silvertech-single-heading .heading.accent,.silvertech-headings .heading.accent,.silvertech-icon.accent > .icon,.silvertech-image-box .item .title a:hover,.silvertech-news .meta .author a:hover,.silvertech-news .meta .comment a:hover ,.silvertech-progress .perc.accent,.silvertech-list .icon.accent,.accent .master-heading .pre-heading,.icon-has-bg.icon-accent .master-icon,.accent .master-link,.icon-accent .master-link:hover,.accent .master-video-icon:hover span,.flickity-slider .master-project:first-child .headline-2 a,.blog-grid .master-news:hover .content-wrap .headline-2 a,.woocommerce-page .woocommerce-MyAccount-content .woocommerce-info .button,.products li .product-info .button,.products li .product-info .added_to_cart,.products li .product-cat:hover,.products li h2:hover,.woo-single-post-class .woocommerce-grouped-product-list-item__label a:hover,.woocommerce-page .shop_table.cart .product-name a:hover,.product_list_widget .product-title:hover,.widget_recent_reviews .product_list_widget a:hover,.widget_product_categories ul li a:hover,.widget.widget_product_search .woocommerce-product-search .search-submit:hover:before,.widget_shopping_cart_content ul li a:hover,.master-project:hover .headline-2 a,.woo-single-post-class .summary .product_meta>span a:hover,.widget_shopping_cart_content ul li a.remove{color:#3377ff!important;}.accent .master-button,.flickity-slider .master-news:first-child .url-wrap .master-button,.flickity-slider .master-news .url-wrap .master-button .hover-effect,.header-style-1 #site-header .master-button,.header-style-2 #site-header .master-button,.header-style-2 .master-quote .name a:before,.header-style-3 #site-header .master-button,button, input[type="button"], input[type="reset"], input[type="submit"],bg-accent,#scroll-top,#scroll-top:before,#main-nav > ul > li > a > span:before,#main-nav .sub-menu li a:before,.hentry .post-media .post-date-custom,.post-media .slick-prev:hover,.post-media .slick-next:hover,.post-media .slick-dots li.slick-active button,.hentry .post-link a > span:before,#footer-widgets .widget .widget-title > span:after ,.widget_mc4wp_form_widget .mc4wp-form .submit-wrap button,#sidebar .widget.widget_tag_cloud .tagcloud a:hover,.widget_product_tag_cloud .tagcloud a:hover,.no-results-content .search-form .search-submit:before,.widget.widget_links ul li a:after,.footer-subscribe .form-wrap .submit-wrap .master-button,.master-news .master-button,.silvertech-pagination ul li .page-numbers:hover,.woocommerce-pagination .page-numbers li .page-numbers:hover,.silvertech-pagination ul li .page-numbers.current,.woocommerce-pagination .page-numbers li .page-numbers.current,.hentry .post-read-more .post-link .hover-effect,.silvertech-accordions .accordion-item.active .accordion-heading > .inner:before,.silvertech-step-box .number-box:hover .number,.silvertech-links > span:before,.silvertech-links.link-style-1.accent > span:before,.silvertech-links.link-style-1.accent > span:after,.silvertech-links.link-style-1.dark > span:after,.silvertech-links.link-style-2.accent > span:before,.silvertech-links.link-style-3.accent > span:after,.silvertech-links.link-style-3.dark > span:after,.silvertech-button.accent,.accent .master-video-icon a,.dot-style-4.dot-accent .master-carousel-box .flickity-page-dots .dot.is-selected,body .accent table.booked-calendar thead tr:first-child th,.silvertech-button.outline.outline-accent:hover,.silvertech-content-box > .inner.accent,.silvertech-content-box > .inner.dark-accent,.silvertech-content-box > .inner.light-accent,.silvertech-single-heading .line.accent,.silvertech-headings .sep.accent,.accent .silvertech-headings .heading > span,.silvertech-icon-box:hover .icon-number,.silvertech-icon.accent-bg .icon,.silvertech-image-box .item .thumb .hover-image .arrow,.silvertech-image-box.style-2 .url-wrap .arrow,.silvertech-images-grid .zoom-popup:after,.silvertech-news .image-wrap .post-date-custom,.project-box .project-text .button a,.project-box .project-text .arrow a,.silvertech-progress .progress-animate.accent,.silvertech-images-carousel.has-borders:after,.silvertech-images-carousel.has-borders:before,.silvertech-images-carousel.has-arrows.arrow-bottom .owl-nav,.silvertech-team .socials li a:hover,.silvertech-video-icon.accent a,.icon-has-bg.accent .master-icon,.hover-effect-style-1.active .elementor-widget-container:before,.hover-effect-style-1:hover .elementor-widget-container:before,.hover-effect-style-3.active .elementor-widget-container:before,.hover-effect-style-3:hover .elementor-widget-container:before,.hover-effect-style-1.icon-has-bg:hover .master-icon,.woocommerce-page .wc-proceed-to-checkout .button,.woocommerce-page .return-to-shop a,#payment #place_order,.widget_price_filter .price_slider_amount .button:hover,.widget_shopping_cart_content .buttons a.checkout,.widget_price_filter .ui-slider .ui-slider-range,.woo-single-post-class .woocommerce-tabs ul li:after{background-color:#3377ff!important;}.underline-solid:after, .underline-dotted:after, .underline-dashed:after{border-bottom-color:#3377ff!important;}.widget.widget_links ul li a:after{border-bottom-color:#3377ff!important;}.widget_mc4wp_form_widget .mc4wp-form .email-wrap input:focus{border-color:#3377ff!important;}#sidebar .widget.widget_tag_cloud .tagcloud a:hover{border-color:#3377ff!important;}.widget_product_tag_cloud .tagcloud a:hover{border-color:#3377ff!important;}.no-results-content .search-form .search-field:focus{border-color:#3377ff!important;}.silvertech-step-box .number-box .number{border-color:#3377ff!important;}.silvertech-button.outline.outline-accent{border-color:#3377ff!important;}.silvertech-button.outline.outline-accent:hover{border-color:#3377ff!important;}.divider-icon-before.accent{border-color:#3377ff!important;}.divider-icon-after.accent{border-color:#3377ff!important;}.silvertech-divider.has-icon .divider-double.accent{border-color:#3377ff!important;}.accent-border .master-button.btn-outline{border-color:#3377ff!important;}.widget_price_filter .ui-slider .ui-slider-handle{border-color:#3377ff!important;}.silvertech-pagination ul li .page-numbers:hover{border-color:#3377ff!important;}.woocommerce-pagination .page-numbers li .page-numbers:hover{border-color:#3377ff!important;}.silvertech-pagination ul li .page-numbers.current{border-color:#3377ff!important;}.woocommerce-pagination .page-numbers li .page-numbers.current{border-color:#3377ff!important;}.widget_price_filter .price_slider_amount .button{border-color:#3377ff!important;}.silvertech-progress .progress-animate.accent.gradient{background: rgba(51,119,255,1);background: -moz-linear-gradient(left, rgba(51,119,255,1) 0%, rgba(51,119,255,0.3) 100%);background: -webkit-linear-gradient( left, rgba(51,119,255,1) 0%, rgba(51,119,255,0.3) 100% );background: linear-gradient(to right, rgba(51,119,255,1) 0%, rgba(51,119,255,0.3) 100%) !important;}/*CUSTOMIZER STYLING*/.animsition-loading{color:#3377ff;}.footer-subscribe{background-color:#f9fafd;}
+		</style>
+
+		<link rel='stylesheet' id='elementor-icons-css'  href='assets/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min7816.css?ver=5.15.0' type='text/css' media='all' />
+		<link rel='stylesheet' id='elementor-frontend-legacy-css'  href='assets/wp-content/plugins/elementor/assets/css/frontend-legacy.mina7a0.css?ver=3.6.1' type='text/css' media='all' />
+		<link rel='stylesheet' id='elementor-frontend-css'  href='assets/wp-content/plugins/elementor/assets/css/frontend.mina7a0.css?ver=3.6.1' type='text/css' media='all' />
+		<link rel='stylesheet' id='elementor-frontend-css'  href='assets/wp-content/plugins/elementor/assets/css/frontend.mina7a.css?ver=3.6.1' type='text/css' media='all' />
+		<link rel='stylesheet' id='elementor-post-6-css'  href='assets/wp-content/uploads/elementor/css/post-6a7f5.css?ver=1648146327' type='text/css' media='all' />
+		<link rel='stylesheet' id='elementor-global-css'  href='assets/wp-content/uploads/elementor/css/globalb059.css?ver=1648146328' type='text/css' media='all' />
+		<link rel='stylesheet' id='elementor-post-5018-css'  href='assets/wp-content/uploads/elementor/css/post-5018bae7.css?ver=1648146437' type='text/css' media='all' />
+		<link rel='stylesheet' id='elementor-post-6602-css' href='assets/wp-content/uploads/elementor/css/post-6602ad4e.css?ver=1648146440' type='text/css' media='all' />
+		<link rel='stylesheet' id='google-fonts-1-css'  href='https://fonts.googleapis.com/css?family=Montserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CDM+Sans%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=auto&amp;ver=5.9.3' type='text/css' media='all' />
+		<link rel='stylesheet' id='elementor-icons-unicons-css'  href='assets/wp-content/plugins/masterlayer-addons-for-elementor/assets/css/unicons-icons8a54.css?ver=1.0.0' type='text/css' media='all' />
+		<link rel='stylesheet' id='elementor-icons-shared-0-css'  href='assets/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min52d5.css?ver=5.15.3' type='text/css' media='all' />
+		<link rel='stylesheet' id='elementor-icons-fa-solid-css'  href='assets/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min52d5.css?ver=5.15.3' type='text/css' media='all' />
+		<script type='text/javascript' src='assets/wp-includes/js/jquery/jquery.minaf6c.js?ver=3.6.0' id='jquery-core-js'></script>
+		<script type='text/javascript' src='assets/wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2' id='jquery-migrate-js'></script>
+		<script type='text/javascript' src='assets/wp-content/plugins/revslider/public/assets/js/rbtools.minb7f2.js?ver=6.4.8' id='tp-tools-js'></script>
+		<script type='text/javascript' src='assets/wp-content/plugins/revslider/public/assets/js/rs6.mine434.js?ver=6.4.11' id='revmin-js'></script>
+		<script type='text/javascript' id='booked-wc-fe-functions-js-extra'></script>
+
+		<script type='text/javascript' src='assets/wp-content/plugins/booked/includes/add-ons/woocommerce-payments/js/frontend-functions7404.js?ver=5.9.3' id='booked-wc-fe-functions-js'></script>
+		<script type='text/javascript' src='assets/wp-content/plugins/masterlayer-addons-for-elementor/includes/widgets/chart7404.js?ver=5.9.3' id='chart-js'></script>
+
+
+		<link rel="icon" href="assets/wp-content/uploads/2020/12/favicon-100x100.png" sizes="32x32" />
+		<link rel="icon" href="assets/wp-content/uploads/2020/12/favicon.png" sizes="192x192" />
+		<link rel="apple-touch-icon" href="assets/wp-content/uploads/2020/12/favicon.png" />
+
+		<script type="text/javascript">function setREVStartSize(e){
+					//window.requestAnimationFrame(function() {
+						window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
+						window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
+						try {
+							var pw = document.getElementById(e.c).parentNode.offsetWidth,
+								newh;
+							pw = pw===0 || isNaN(pw) ? window.RSIW : pw;
+							e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+							e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+							e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+							e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+							e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+							e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+							e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
+							if(e.layout==="fullscreen" || e.l==="fullscreen")
+								newh = Math.max(e.mh,window.RSIH);
+							else{
+								e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+								for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
+								e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+								e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+								for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+
+								var nl = new Array(e.rl.length),
+									ix = 0,
+									sl;
+								e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+								e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+								e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+								e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
+								for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+								sl = nl[0];
+								for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
+								var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
+								newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+							}
+							if(window.rs_init_css===undefined) window.rs_init_css = document.head.appendChild(document.createElement("style"));
+							document.getElementById(e.c).height = newh+"px";
+							window.rs_init_css.innerHTML += "#"+e.c+"_wrapper { height: "+newh+"px }";
+						} catch(e){
+							console.log("Failure at Presize of Slider:" + e)
+						}
+					//});
+				};
+		</script>
+	</head>
+  <body>
+    <div id="site-header-wrap">
+      <ul class="mobi-nav-extra">
+        <li class="ext">
+          <form role="search" method="get" action="#" class="search-form">
+            <input
+              type="search"
+              class="search-field"
+              placeholder="Search here..."
+              value=""
+              name="s"
+              title="Search for:"/>
+            <button type="submit" class="search-submit" title="Search">
+              SEARCH<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
+                <path
+                  d="M20.3,0.9c-7.2,0-13,5.8-13,13c0,3.1,1.1,5.9,2.9,8.2l-8.6,8.6c-0.5,0.5-0.5,1.4,0,2s1.4,0.5,2,0l8.6-8.6
+				c2.2,1.8,5.1,2.9,8.2,2.9c7.2,0,13-5.8,13-13S27.5,0.9,20.3,0.9z M20.3,24.9c-6.1,0-11-4.9-11-11s4.9-11,11-11s11,4.9,11,11
+				S26.4,24.9,20.3,24.9z"
+                ></path>
+              </svg>
+            </button>
+          </form>
+        </li>
+        <li class="ext">
+          <a
+            class="cart-info"
+            href="#cart/"
+            title="View your shopping cart"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
+              <path
+                d="M6.7,30.2c0,1.1,0.9,2.1,2.1,2.1s2.1-0.9,2.1-2.1c0-1.1-0.9-2.1-2.1-2.1S6.7,29,6.7,30.2z M25.3,30.2
+				c0,1.1,0.9,2.1,2.1,2.1s2.1-0.9,2.1-2.1c0-1.1-0.9-2.1-2.1-2.1S25.3,29,25.3,30.2z M0.5,4.4c0,0.6,0.5,1,1,1h2.1l1.3,5.5l1.8,9
+				c0,0.1,0,0.1,0,0.2l-1.1,4.7c-0.1,0.3,0,0.6,0.2,0.9c0.2,0.2,0.5,0.4,0.8,0.4h23.5c0.6,0,1-0.5,1-1c0-0.6-0.5-1-1-1H8l0.5-2.1
+				c0.1,0,0.2,0.1,0.3,0.1h18.9c1.1,0,1.8-0.2,2.4-1.6l3.4-10.3c0.6-1.8-0.7-2.6-1.8-2.6H6.7c-0.2,0-0.3,0.1-0.5,0.1L5.5,4.1
+				c-0.1-0.5-0.5-0.8-1-0.8h-3C0.9,3.3,0.5,3.8,0.5,4.4z M6.8,9.5h24.6l-3.3,10.1c0,0.1-0.1,0.2-0.1,0.2c-0.1,0-0.2,0-0.3,0H8.8v-0.2
+				l0-0.2L6.8,9.5z"></path>
+			</svg>0 items<span class="woocommerce-Price-amount amount" ><bdi><span class="woocommerce-Price-currencySymbol">$</span>0</bdi></span></a>
+        </li>
+      </ul>
+
+      <header id="site-header" class="">
+        <div class="silvertech-container">
+          <div class="site-header-inner">
+            <div class="wrap-inner">
+              <div id="site-logo">
+                <div id="site-logo-inner" style="max-width: 179px">
+                  <a class="main-logo" href="#" title="SilverTech" rel="home"
+                    ><img src="assets/wp-content/themes/silvertech/assets/img/logo.png" alt="SilverTech"
+                  /></a>
+                </div>
+              </div>
+              <div class="append">
+                <nav id="main-nav" class="main-nav">
+                  <ul id="menu-top-menu" class="menu">
+                    <li id="menu-item-8039" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-8039">
+                      <a href="index.php"><span>Home</span></a>
+                    </li>
+                    <li id="menu-item-8431" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8431">
+                      <a href="#about-us" onclick="anchor(this)"><span>About Us</span></a>
+                    </li>
+                    <li id="menu-item-8430" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8430">
+                      <a href="#what-we-do" onclick="anchor(this)"><span>What we do</span></a>
+                    </li>
+                    <li id="menu-item-8428" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8428">
+                      <a href="#solutions-section" onclick="anchor(this)"><span>Solutions</span></a>
+                    </li>
+                    <li id="menu-item-8428" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8428">
+                      <a href="#contact-us" onclick="anchor(this)"><span>Contact</span></a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>              
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- /#site-header -->
+    </div>
+
+	<!-- #site-main -->
+	<div id="featured-title" class="clearfix centered" style="background-image: url(assets/wp-content/uploads/2020/12/feature-bg.png); background-repeat: no-repeat; background-position: center top; background-size: cover;">
+		<div class="silvertech-container clearfix">
+		   <div class="inner-wrap">
+			  <div class="title-group">
+				 <h1 class="main-title">
+					Privacy notice
+				 </h1>
+			  </div>
+			  <div id="breadcrumbs">
+				 <div class="breadcrumbs-inner">
+					<div class="breadcrumb-trail">
+					   <a class="home" href="index.php">Home</a><span>Privacy notice</span>
+					</div>
+				 </div>
+			  </div>
+		   </div>
+		</div>
+	 </div>
+	<div id="main-content" class="site-main clearfix">
+		<div id="content-wrap" class="silvertech-container clearfix">
+		   <div id="site-content" class="site-content clearfix">
+			  <div id="inner-content" class="inner-content-wrap">
+				 <article class="page-content post-5018 page type-page status-publish hentry">
+					<div data-elementor-type="wp-page" data-elementor-id="5018" class="elementor elementor-5018">
+					   <div class="elementor-inner">
+						  <div class="elementor-section-wrap">
+							 <section class="elementor-section elementor-top-section elementor-element elementor-element-4f7084a elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" id="experience-section" data-id="4f7084a" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}" style="width: 1519px; left: -174.6px; margin-bottom: 100px !important;">
+								<div class="elementor-container elementor-column-gap-default">
+								   <div class="elementor-row">
+									  <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-52e892d" data-id="52e892d" data-element_type="column">
+										 <div class="elementor-column-wrap elementor-element-populated">
+											<div class="elementor-widget-wrap">
+											   <div class="elementor-element elementor-element-6977e73 elementor-widget elementor-widget-spacer" data-id="6977e73" data-element_type="widget" data-widget_type="spacer.default">
+												  <div class="elementor-widget-container">
+													 <div class="elementor-spacer">
+														<div class="elementor-spacer-inner"></div>
+													 </div>
+												  </div>
+											   </div>
+											   <div class="elementor-element elementor-element-2c37ac2 align-center animated-fast elementor-widget elementor-widget-mae-headings animated fadeInUp" data-id="2c37ac2" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:200}" data-widget_type="mae-headings.default">
+												  <div class="elementor-widget-container">
+													 <div class="master-heading">
+														<div class="sub-heading">This privacy notice tells you about the information we collect from you when you purchase or access one or more of our services via our website. In collecting this information, we are acting as a data controller and, by law, we are required to provide you with information about us, about why and how we use your data, and about the rights you have over your data. This privacy policy is independent from our offline personal data collection practices..
+
+															Notification of Changes to This Notice
+															THE COMPANY is continually improving and adding new functionality and features to its website and improving and adding to our existing products, services, and programs. Because of these ongoing changes, changes in the law, and the changing nature of technology, our data practices might change from time to time. We will post the such changes on our website to notify you of the changes. We encourage you to check this page frequently. This notice was last updated on 15/04/2022.
+
+															Personal Data
+															The only personal data THE COMPANY currently collects through its websites is the information you voluntarily give us when you use our websites and services. For example, you may use this site to contact THE COMPANY with questions and comments or use THE COMPANY’s services. When you fill out a form on our websites, you may provide your name and other contact information, including your company’s name, your e-mail address, and your mailing address or the mailing address of your company or other personal information.
+
+															Why We Use Data Collected Through the website
+															We will use your information to answer your query, confirm your payment, process your order, and/or to provide you with the required service. We will also send you a receipt via email and we may use your telephone number to contact you regarding your account. We require this information in order to be able to answer your query and/or fulfil our contract with you. Our website access logs are only collected for tracking visits to our site for statistical and performance optimisation purposes, to ensure that your account works correctly when accessing our services and to assist should any visitor, including you, not be able to access websites.
+
+															Cookies and Access Information
+															In addition to the information you provide when you use this website, THE COMPANY uses technology to collect anonymous information about the use of our website, mainly through the use of cookies. Cookies are alphanumeric identifiers (small pieces of data) that are transferred to your device’s hard drive through your web browser to enable its systems to recognize your browser. For example, we use technology to track how many visitors access our website, the date and time of their visit, the length of their stay, and which pages they view. We also use technology to determine which web browsers our visitors use and the address from which they accessed our sites (for example, if they connected to the website by clicking on one of our banner ads). This technology enables us to compile statistics about our visitors and their use of our sites. THE COMPANY and its affiliates use this anonymous data and share it with third parties to improve the content and functionality of our website, to better understand our customers and markets, and to improve our products and services. You can delete cookies using your browsers own Clear History function. You can reset your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you choose to disable, reject or block the cookies we use, some parts of our website will not function properly and in some other cases, our website will not be accessible at all. For more information about internet cookies, how to control your cookie settings and browser settings, or how to delete cookies on your hard drive, please visit http://www.allaboutcookies.org/.
+
+															What Do We Do With Your Personal Data
+															We may share some or all of the personal data collected through this website with our affiliates, who use this data in accordance with this Privacy Notice. Both THE COMPANY and our affiliates may share information collected through its websites with third-party vendors who act for or on behalf of THE COMPANY or our affiliates (for example, companies that provide support services to us or, including data processing services). These companies may need information about you in order to perform their functions. These companies are not authorized to use the information we share with them for any other purpose. In addition, there may be some other, limited circumstances in which THE COMPANY or our affiliates may share or transfer the personal data in our databases, for example, to comply with a legal requirement, for the administration of justice, to protect your vital interests, or in the event of a corporate sale, merger, reorganization, dissolution, or similar event. Any such sharing of personal information, within EU or overseas (if applicable) shall be done according to applicable law to ensure adequate protection of data. We do not use the information you provide to make any automated decisions that might affect you.
+
+															Link to Other Sites
+															This privacy notice applies only to the THE COMPANY website. THE COMPANY and its affiliates operate other websites for different purposes and in different countries where different laws may apply. If you visit a THE COMPANY website, please take a moment to review the privacy notice posted on that site to learn what personal data may be collected through that site and how it is processed. THE COMPANY’s website may contain hyperlinks to other websites that are not operated by THE COMPANY or one of our affiliates. These hyperlinks are provided for your reference and convenience only and do not imply any endorsement of the activities of these third-party websites or any association with their operators. THE COMPANY does not control these websites and is not responsible for their data practices. We urge you to review the privacy notice posted on any site you visit before using the site or providing any personal data about yourself.
+
+															How Long We Keep Your Personal Information
+															We’ll store the information for as long as we have to by law. If there is no legal requirement or justification, we’ll store it only as long as needed. We keep your account information for up to 10 years after service provision due to statutory tax and company record keeping obligations. Your personal information associated with the order will then be removed.
+
+															Your rights over your information
+															By law, you can ask us what information we hold about you, and you can ask us to correct it if it is inaccurate. You can also ask us to give you a copy of the information, to restrict use of information or to stop using your information for a period of time if you believe we are not doing so lawfully. To submit a request by email or post please use the contact information provided above.
+
+															Questions About Our Privacy Notice
+															If you have any questions about this privacy notice, concerns or complaints about the way we processes your personal data, please contact us. Should you feel we shall not be helpful with regards to your complaint, you can contact your local data protection regulator, if you have one. A list of European data protection regulators can be found here: http://ec.europa.eu/justice/data-protection/article-29/structure/data-protection-authorities/index_en.htm
+
+															Governing Law
+															This privacy notice is governed by and construed in accordance with the laws of the Ireland and relevant EU legislation.
+
+															Security
+															THE COMPANY makes every effort to ensure that your personal information is protected at all times. However, THE COMPANY shall not be held liable for any security leaks that might occur beyond our reasonable control. THE COMPANY shall only disclose potentially personal-identifying information to employees and any affiliates with a need to know, in order to process the information on behalf of THE COMPANY or to provide the services available via THE COMPANY’s website.
+
+															Trademark
+															All symbols, logos and the words “THE COMPANY“ they are or combined with any other word, used on this website in whatever manner used or represented, are trademarks of THE COMPANY or any associated companies. THE COMPANY or any affiliated company are the only companies authorised to use such marks.
+
+															Copyright
+															All rights reserved unless indicated otherwise on this website. THE COMPANY welcomes you to use this website for your personal and non-commercial purposes only. You are not allowed to copy, re-use, modify, transmit, broadcast, or display for redistribution of third parties without having first obtained THE COMPANY’s explicit permission.
+
+															Disclaimer
+															The materials contained in this web site are provided for general information purposes only and are not intended to provide legal or other professional advice nor do they commit THE COMPANY to any obligation whatsoever. THE COMPANY accepts no responsibility for any direct, indirect or consequential loss or damage which may arise from reliance on information contained in this site. Users are advised to seek confirmation of statements made herein before acting upon them; specialist advice should also be sought on specific issues.
+														</div>
+													 </div>
+												  </div>
+											   </div>
+											</div>
+										 </div>
+									  </div>
+								   </div>
+								</div>
+							 </section>
+
+						  </div>
+					   </div>
+					</div>
+				 </article>
+			  </div>
+		   </div>
+		   <!-- /#site-content -->
+		</div>
+		<!-- /#content-wrap -->
+	</div>
+	<!-- /#site-main -->
+
+	<!-- #site-footer -->
+    <div
+      class="footer-wrap"
+      style="
+        z-index: 1;
+        width: 100%;
+        bottom: 0px;
+      ">
+      <div id="bottom" class="style-2">
+        <div class="silvertech-container">
+          <div class="bottom-bar-inner-wrap">
+            <div class="inner-wrap clearfix">
+              <div id="copyright">
+                Copyright © 2022 Voxalo. All rights reserved. 
+              </div>
+
+              <div class="bottom-bar-menu">
+                <div class="bottom-bar-menu">
+                  <ul id="menu-bottom-menu" class="bottom-nav">
+                    <li
+                      id="menu-item-11059"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11059">
+                      <a href="index.html">Privacy Policy</a>
+                    </li>
+                    <li
+                      id="menu-item-11060"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11060">
+                      <a href="">Imprint</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- /.bottom-bar-menu -->
+              </div>
+              <!-- /.bottom-bar-menu -->
+            </div>
+            <!-- /.bottom-bar-copyright -->
+          </div>
+        </div>
+
+        <a id="scroll-top" class="show"></a>
+      </div>
+      <!-- /#bottom -->
+    </div>
+	<!-- /#site-footer -->
+			<script type="text/javascript">
+		if(typeof revslider_showDoubleJqueryError === "undefined") {
+			function revslider_showDoubleJqueryError(sliderID) {
+				var err = "<div class='rs_error_message_box'>";
+				err += "<div class='rs_error_message_oops'>Oops...</div>";
+				err += "<div class='rs_error_message_content'>";
+				err += "You have some jquery.js library include that comes after the Slider Revolution files js inclusion.<br>";
+				err += "To fix this, you can:<br>&nbsp;&nbsp;&nbsp; 1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on";
+				err += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jQuery.js inclusion and remove it";
+				err += "</div>";
+			err += "</div>";
+				var slider = document.getElementById(sliderID); slider.innerHTML = err; slider.style.display = "block";
+			}
+		}
+		</script>
+<link rel='stylesheet' id='magnific-css'  href='assets/wp-content/plugins/masterlayer-addons-for-elementor/assets/css/magnific.popup5152.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='flickity-css'  href='assets/wp-content/plugins/masterlayer-addons-for-elementor/assets/css/flickity5152.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='e-animations-css'  href='assets/wp-content/plugins/elementor/assets/lib/animations/animations.mina7a0.css?ver=3.6.1' type='text/css' media='all' />
+<script type='text/javascript' src='assets/wp-includes/js/jquery/ui/core.min0028.js?ver=1.13.1' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='assets/wp-includes/js/jquery/ui/datepicker.min0028.js?ver=1.13.1' id='jquery-ui-datepicker-js'></script>
+<script type='text/javascript' id='jquery-ui-datepicker-js-after'>
+	jQuery(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='assets/wp-content/plugins/booked/assets/js/spin.min7406.js?ver=2.0.1' id='booked-spin-js-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/booked/assets/js/spin.jquery7406.js?ver=2.0.1' id='booked-spin-jquery-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/booked/assets/js/tooltipster/js/jquery.tooltipster.min9b70.js?ver=3.3.0' id='booked-tooltipster-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/booked/assets/js/functions25b6.js?ver=2.3.5' id='booked-functions-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/masterlayer-addons-for-elementor/assets/js/slick5152.js?ver=1.0' id='slick-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/masterlayer-addons-for-elementor/assets/js/alterClass5152.js?ver=1.0' id='alterClass-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/masterlayer-addons-for-elementor/assets/js/core5152.js?ver=1.0' id='mae-core-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/masterlayer-addons-for-elementor/assets/js/init5152.js?ver=1.0' id='mae-init-js'></script>
+<script type='text/javascript' src='assets/wp-includes/js/dist/vendor/regenerator-runtime.min3937.js?ver=0.13.9' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='assets/wp-includes/js/dist/vendor/wp-polyfill.min2c7c.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/contact-form-7/includes/js/index5406.js?ver=5.5.6' id='contact-form-7-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.minfada.js?ver=2.7.0-wc.6.3.1' id='jquery-blockui-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min9b30.js?ver=6.3.1' id='wc-add-to-cart-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min07f2.js?ver=2.1.4-wc.6.3.1' id='js-cookie-js'></script>
+</script>
+<script type='text/javascript' src='assets/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min9b30.js?ver=6.3.1' id='woocommerce-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min9b30.js?ver=6.3.1' id='wc-cart-fragments-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/booked/includes/add-ons/frontend-agents/js/functions25b6.js?ver=2.3.5' id='booked-fea-js-js'></script>
+<script type='text/javascript' src='assets/wp-content/themes/silvertech/assets/js/html5shiv1ac1.js?ver=3.7.3' id='html5shiv-js'></script>
+<script type='text/javascript' src='assets/wp-content/themes/silvertech/assets/js/respond6f3e.js?ver=1.3.0' id='respond-js'></script>
+<script type='text/javascript' src='assets/wp-content/themes/silvertech/assets/js/matchmedia8a54.js?ver=1.0.0' id='matchmedia-js'></script>
+<script type='text/javascript' src='assets/wp-content/themes/silvertech/assets/js/easing6f3e.js?ver=1.3.0' id='easing-js'></script>
+<script type='text/javascript' src='assets/wp-content/themes/silvertech/assets/js/fitvidsf488.js?ver=1.1.0' id='fitvids-js'></script>
+<script type='text/javascript' src='assets/wp-content/themes/silvertech/assets/js/splittexta7a0.js?ver=3.6.1' id='splittext-js'></script>
+<script type='text/javascript' src='assets/wp-content/themes/silvertech/assets/js/main8a54.js?ver=1.0.0' id='silvertech-theme-script-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/masterlayer-addons-for-elementor/assets/js/appear5152.js?ver=1.0' id='appear-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/masterlayer-addons-for-elementor/assets/js/magnific.popup5152.js?ver=1.0' id='magnific-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/masterlayer-addons-for-elementor/assets/js/waitforimages5152.js?ver=1.0' id='waitforimages-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/masterlayer-addons-for-elementor/assets/js/flickity5152.js?ver=1.0' id='flickity-js'></script>
+<script type='text/javascript' defer src='assets/wp-content/plugins/mailchimp-for-wp/assets/js/forms6c42.js?ver=4.8.7' id='mc4wp-forms-api-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/elementor/assets/js/webpack.runtime.mina7a0.js?ver=3.6.1' id='elementor-webpack-runtime-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/elementor/assets/js/frontend-modules.mina7a0.js?ver=3.6.1' id='elementor-frontend-modules-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min05da.js?ver=4.0.2' id='elementor-waypoints-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/elementor/assets/lib/swiper/swiper.min48f5.js?ver=5.3.6' id='swiper-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/elementor/assets/lib/share-link/share-link.mina7a0.js?ver=3.6.1' id='share-link-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/elementor/assets/lib/dialog/dialog.mind227.js?ver=4.9.0' id='elementor-dialog-js'></script>
+<script type='text/javascript' id='elementor-frontend-js-before'>
+	var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.6.1","is_static":false,"experimentalFeatures":{"e_hidden_wordpress_widgets":true,"elements-color-picker":true,"favorite-widgets":true,"admin-top-bar":true},"urls":{"assets":"https:\/\/ninzio.com\/silvertech\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":5018,"title":"Home%2001%20%E2%80%93%20SilverTech","excerpt":"","featuredImage":false}};
+</script>
+<script type='text/javascript' src='assets/wp-content/plugins/elementor/assets/js/frontend.mina7a0.js?ver=3.6.1' id='elementor-frontend-js'></script>
+<script type='text/javascript' src='assets/wp-content/plugins/elementor/assets/js/preloaded-modules.mina7a0.js?ver=3.6.1' id='preloaded-modules-js'></script>
+<script id="shopping-cart-items-updater" type="text/javascript"></script>
+  </body>
+</html>
